@@ -1,13 +1,13 @@
 package com.blizzardarmory.repository
 
-import com.blizzardarmory.model.Achievement
+import com.blizzardarmory.model.AchievementQuery
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
 
 @Repository
-interface AchievementRepository : JpaRepository<Achievement, Long> {
+interface AchievementRepository : JpaRepository<AchievementQuery, Long> {
 
     @Query(value = "select av.id," +
             "       av.name->>:locale as \"name\"," +
@@ -30,5 +30,5 @@ interface AchievementRepository : JpaRepository<Achievement, Long> {
             "  left join achievement_assets aa" +
             "    on aa.achievement_media_id = am.id",
             nativeQuery = true)
-    fun getAllAchievements(@Param("locale") locale: String): List<Achievement>
+    fun getAllAchievements(@Param("locale") locale: String): List<AchievementQuery>
 }
