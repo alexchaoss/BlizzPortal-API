@@ -1,13 +1,13 @@
 package com.blizzardarmory.repository
 
-import com.blizzardarmory.model.AchievementQuery
+import com.blizzardarmory.model.Achievement
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
 
 @Repository
-interface AchievementRepository : JpaRepository<AchievementQuery, Long> {
+interface AchievementRepository : JpaRepository<Achievement, Long> {
 
     @Query(value = "select av.id," +
             "       av.name->>:locale as \"name\"," +
@@ -21,14 +21,14 @@ interface AchievementRepository : JpaRepository<AchievementQuery, Long> {
             "       acc.name->>:locale as \"parent_category_name\"," +
             "       aa.value as \"icon\"" +
             "  from achievements av " +
-            "  inner join achievement_categories ac" +
+            "  left join achievement_categories ac" +
             "    on ac.id = av.category_id" +
-            "  inner join achievement_categories acc" +
+            "  left join achievement_categories acc" +
             "    on acc.id = ac.parent_category_id" +
             "  left join achievement_media am" +
             "    on am.achievement_id = av.id" +
             "  left join achievement_assets aa" +
             "    on aa.achievement_media_id = am.id",
             nativeQuery = true)
-    fun getAllAchievements(@Param("locale") locale: String): List<AchievementQuery>
+    fun getAllAchievements(@Param("locale") locale: String): List<Achievement>
 }
