@@ -1,7 +1,7 @@
 package com.blizzardarmory.controller
 
-import com.blizzardarmory.server.model.Category
-import com.blizzardarmory.server.repository.CategoryRepository
+import com.blizzardarmory.model.Category
+import com.blizzardarmory.repository.CategoryRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping

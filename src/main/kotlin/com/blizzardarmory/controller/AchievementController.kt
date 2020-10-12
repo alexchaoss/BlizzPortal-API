@@ -1,8 +1,7 @@
 package com.blizzardarmory.controller
 
-import com.blizzardarmory.server.model.Achievement
-import com.blizzardarmory.server.model.Category
-import com.blizzardarmory.server.repository.AchievementRepository
+import com.blizzardarmory.model.Achievement
+import com.blizzardarmory.repository.AchievementRepository
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
