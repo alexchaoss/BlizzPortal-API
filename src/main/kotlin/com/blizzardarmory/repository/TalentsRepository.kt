@@ -1,12 +1,14 @@
 package com.blizzardarmory.repository
 
+import com.blizzardarmory.model.Achievement
 import com.blizzardarmory.model.Talent
+import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
 
 @Repository
-interface TalentsRepository {
+interface TalentsRepository : JpaRepository<Talent, Long> {
 
     @Query(value = "select t.id," +
             "t.column_index," +
