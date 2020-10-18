@@ -11,7 +11,7 @@ interface CategoryRepository : JpaRepository<Category, Long> {
 
     @Query(value = "select " +
             "id, " +
-            "name ->> :locale as name, " +
+            "name->> :locale as name, " +
             "is_guild_category, " +
             "display_order, " +
             "parent_category_id, " +
