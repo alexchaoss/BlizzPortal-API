@@ -15,14 +15,20 @@ interface CovenantRepository : JpaRepository<Covenant, Long> {
             "       co.spell_tooltip_id," +
             "       s.value as icon," +
             "       sp.name->>:locale as \"name\"," +
-            "       sp.description->>:locale as \"description\"" +
-            "from covenant_abilities co " +
+            "       st.description->>:locale as \"description\"," +
+            "       st.cast_time->>:locale as \"cast_time\"," +
+            "       st.cooldown->>:locale as \"cooldown\"," +
+            "       st.range->>:locale as \"range\"," +
+            "       st.power_cost->>:locale as \"power_cost\"" +
+            " from covenant_abilities co " +
             " left join spells sp" +
-            "  on sp.id = co.spell_tooltip_id" +
+            "   on sp.id = co.spell_tooltip_id" +
+            " left join spell_tooltips st" +
+            "   on st.id = co.spell_tooltip_id" +
             " left join spell_media sm" +
-            "  on sm.spell_id = co.spell_tooltip_id" +
+            "   on sm.spell_id = co.spell_tooltip_id" +
             " left join spell_assets s" +
-            "  on s.spell_media_id = sm.spell_id" +
+            "   on s.spell_media_id = sm.spell_id" +
             " where co.playable_class_id = :class_id",
             nativeQuery = true)
     fun getCovenant(@Param("class_id") class_id: Long, @Param("locale") locale: String): List<Covenant>
