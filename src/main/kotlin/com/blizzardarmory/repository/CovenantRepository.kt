@@ -17,13 +17,13 @@ interface CovenantRepository : JpaRepository<Covenant, Long> {
             "       sp.name->>:locale as \"name\"," +
             "       sp.description->>:locale as \"description\"" +
             "from covenant_abilities co " +
-            "left join spells sp" +
-            "  on sp.id = ca.spell_tooltip_id" +
-            "left join spell_media sm" +
-            "  on sm.spell_id = ca.spell_tooltip_id" +
-            "left join spell_assets s" +
+            " left join spells sp" +
+            "  on sp.id = co.spell_tooltip_id" +
+            " left join spell_media sm" +
+            "  on sm.spell_id = co.spell_tooltip_id" +
+            " left join spell_assets s" +
             "  on s.spell_media_id = sm.spell_id" +
-            "where playable_class_id = :class_id",
+            " where co.playable_class_id = :class_id",
             nativeQuery = true)
     fun getCovenant(@Param("class_id") class_id: Long, @Param("locale") locale: String): List<Covenant>
 }
