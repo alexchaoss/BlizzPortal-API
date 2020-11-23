@@ -1,13 +1,10 @@
 package com.blizzardarmory.repository
 
-import com.blizzardarmory.model.Achievement
 import com.blizzardarmory.model.Talent
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
-import java.math.BigDecimal
-import java.math.BigInteger
 
 @Repository
 interface TalentsRepository : JpaRepository<Talent, Long> {
