@@ -12,4 +12,8 @@ class Covenant {
     val icon: String? = null
     val name: String? = null
     val description: String? = null
+    val cooldown: String? = null
+    val cast_time: String? = null
+    val range: String? = null
+    val power_cost: String? = null
 }
