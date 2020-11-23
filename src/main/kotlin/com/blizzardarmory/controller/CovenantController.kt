@@ -9,8 +9,13 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class CovenantController (val repository: CovenantRepository) {
 
-    @RequestMapping("/covenant/{class_id}/{locale}")
-    fun categories(@PathVariable class_id: Long, @PathVariable locale: String): List<Covenant> {
-        return repository.getCovenant(class_id, locale)
+    @RequestMapping("/covenant/class/{class_id}/{locale}")
+    fun covenantClassSpells(@PathVariable class_id: Long, @PathVariable locale: String): List<Covenant> {
+        return repository.getCovenantClassSpells(class_id, locale)
+    }
+
+    @RequestMapping("/covenant/{cov_id}/{locale}")
+    fun covenantSpells(@PathVariable cov_id: Long, @PathVariable locale: String): List<Covenant> {
+        return repository.getCovenantSpells(cov_id, locale)
     }
 }
