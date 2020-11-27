@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
 
 @Repository
-interface TalentsRepository : JpaRepository<Talent, Long> {
+interface TalentRepository : JpaRepository<Talent, Long> {
 
     @Query(value = "select t.id," +
             "       t.column_index," +
