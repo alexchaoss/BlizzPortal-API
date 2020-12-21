@@ -1,6 +1,7 @@
 package com.blizzardarmory.controller
 
 import com.blizzardarmory.model.Covenant
+import com.blizzardarmory.model.TechTalent
 import com.blizzardarmory.repository.CovenantRepository
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping

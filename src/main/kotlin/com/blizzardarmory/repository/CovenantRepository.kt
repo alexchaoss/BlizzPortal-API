@@ -1,6 +1,7 @@
 package com.blizzardarmory.repository
 
 import com.blizzardarmory.model.Covenant
+import com.blizzardarmory.model.TechTalent
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
