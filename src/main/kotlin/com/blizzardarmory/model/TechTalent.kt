@@ -12,5 +12,6 @@ class TechTalent {
     val description: String? = null
     val cast_time: String? = null
     val tier: Long? = null
+    val tree_id: Long? = null
     val display_order: Long? = null
 }

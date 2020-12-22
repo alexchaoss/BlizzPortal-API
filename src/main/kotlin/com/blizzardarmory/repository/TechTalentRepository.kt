@@ -14,6 +14,7 @@ interface TechTalentRepository : JpaRepository<TechTalent, Long> {
             "       tal.description->>:locale as \"description\"," +
             "       tal.cast_time->>:locale as \"cast_time\"," +
             "       tal.tier," +
+            "       ttt.tree_id," +
             "       tal.display_order" +
             " FROM" +
             "  (SELECT cast(tt.spell_tooltip->'spell'->'id' as BIGINT) AS spell_id," +
