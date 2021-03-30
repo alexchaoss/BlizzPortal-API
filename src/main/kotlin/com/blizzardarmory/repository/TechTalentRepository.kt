@@ -36,4 +36,4 @@ interface TechTalentRepository : JpaRepository<TechTalent, Long> {
             " WHERE sb.id = :sb_id",
         nativeQuery = true)
     fun getTechTalents(@Param("sb_id") soulbind_id: Long, @Param("locale") locale: String): List<TechTalent>
-}
+} 
