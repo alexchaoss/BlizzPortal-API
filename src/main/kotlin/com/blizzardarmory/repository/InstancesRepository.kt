@@ -14,7 +14,7 @@ interface InstancesRepository : JpaRepository<Instances, Long> {
             "name->> :locale as name, " +
             "expansion_id " +
             "from journal_instances " +
-            "where category_id = \"DUNGEON\" " +
+            "where category_id = 'DUNGEON' " +
             "order by expansion_id",
             nativeQuery = true)
     fun getAllInstances(@Param("locale") locale: String): List<Instances>
