@@ -12,7 +12,7 @@ interface PlayableSpecializationRepository : JpaRepository<PlayableSpecializatio
 
     @Query(value = "select " +
             "id, " +
-            "role_id" +
+            "role_id, " +
             "playable_class_id " +
             "from playable_specializations ", nativeQuery = true)
     fun getAllPlayableSpecializations(): List<PlayableSpecialization>
